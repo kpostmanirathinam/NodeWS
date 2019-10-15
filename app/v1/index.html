@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>KPOST WebService</title>
+<style>
+h1{
+position: absolute;
+top: 44%;
+left: 27%;
+z-index: 4;
+font-size: 38px;
+font-weight: bold;
+}
+
+.Main {
+  border-radius:50%;
+  height:2px; width:2px; /* To allow border-radius to work */
+  position:absolute;
+  top:50%; left:50%;
+  margin-top:-1px; margin-left:-1px;
+  box-shadow:
+    -75px -125px 0 40px #6cce74,
+     75px -125px 0 40px #c18d46,
+    150px    0px 0 40px #c14745,
+     75px  125px 0 40px #2e1e5b,
+    -75px  125px 0 40px #9c37a6,
+   -150px    0px 0 40px #76bdd1;
+  -webkit-animation:rotate 12s infinite linear;
+  animation:rotate 12s infinite linear;
+}
+@keyframes rotate {
+  16.67% {
+    box-shadow:
+      -75px -125px 0 40px #76bdd1,
+       75px -125px 0 40px #6cce74,
+      150px    0px 0 40px #c18d46,
+       75px  125px 0 40px #c14745,
+      -75px  125px 0 40px #2e1e5b,
+     -150px    0px 0 40px #9c37a6;
+  }
+  33.33%   { 
+    box-shadow:
+      -75px -125px 0 40px #9c37a6,
+       75px -125px 0 40px #76bdd1,
+      150px    0px 0 40px #6cce74,
+       75px  125px 0 40px #c18d46,
+      -75px  125px 0 40px #c14745,
+     -150px    0px 0 40px #2e1e5b;
+  }
+  50%      { 
+    box-shadow:
+      -75px -125px 0 40px #2e1e5b,
+       75px -125px 0 40px #9c37a6,
+      150px    0px 0 40px #76bdd1,
+       75px  125px 0 40px #6cce74,
+      -75px  125px 0 40px #c18d46,
+     -150px    0px 0 40px #c14745;
+  }
+  66.67%   { 
+    box-shadow:
+      -75px -125px 0 40px #c14745,
+       75px -125px 0 40px #2e1e5b,
+      150px    0px 0 40px #9c37a6,
+       75px  125px 0 40px #76bdd1,
+      -75px  125px 0 40px #6cce74,
+     -150px    0px 0 40px #c18d46;
+  }
+  88.88%   { 
+    box-shadow:
+      -75px -125px 0 40px #c18d46,
+       75px -125px 0 40px #c14745,
+      150px    0px 0 40px #2e1e5b,
+       75px  125px 0 40px #9c37a6,
+      -75px  125px 0 40px #76bdd1,
+     -150px    0px 0 40px #6cce74;
+  }
+  100% {
+    transform:rotate(-360deg);
+    box-shadow:
+      -75px -125px 0 40px #6cce74,
+       75px -125px 0 40px #c18d46,
+      150px    0px 0 40px #c14745,
+       75px  125px 0 40px #2e1e5b,
+      -75px  125px 0 40px #9c37a6,
+     -150px    0px 0 40px #76bdd1;
+  }
+}
+@-webkit-keyframes rotate {
+  16.67% {
+    box-shadow:
+      -75px -125px 0 40px #76bdd1,
+       75px -125px 0 40px #6cce74,
+      150px    0px 0 40px #c18d46,
+       75px  125px 0 40px #c14745,
+      -75px  125px 0 40px #2e1e5b,
+     -150px    0px 0 40px #9c37a6;
+  }
+  33.33%   { 
+    box-shadow:
+      -75px -125px 0 40px #9c37a6,
+       75px -125px 0 40px #76bdd1,
+      150px    0px 0 40px #6cce74,
+       75px  125px 0 40px #c18d46,
+      -75px  125px 0 40px #c14745,
+     -150px    0px 0 40px #2e1e5b;
+  }
+  50%      { 
+    box-shadow:
+      -75px -125px 0 40px #2e1e5b,
+       75px -125px 0 40px #9c37a6,
+      150px    0px 0 40px #76bdd1,
+       75px  125px 0 40px #6cce74,
+      -75px  125px 0 40px #c18d46,
+     -150px    0px 0 40px #c14745;
+  }
+  66.67%   { 
+    box-shadow:
+      -75px -125px 0 40px #c14745,
+       75px -125px 0 40px #2e1e5b,
+      150px    0px 0 40px #9c37a6,
+       75px  125px 0 40px #76bdd1,
+      -75px  125px 0 40px #6cce74,
+     -150px    0px 0 40px #c18d46;
+  }
+  88.88%   { 
+    box-shadow:
+      -75px -125px 0 40px #c18d46,
+       75px -125px 0 40px #c14745,
+      150px    0px 0 40px #2e1e5b,
+       75px  125px 0 40px #9c37a6,
+      -75px  125px 0 40px #76bdd1,
+     -150px    0px 0 40px #6cce74;
+  }
+  100% {
+    -webkit-transform:rotate(-360deg);
+    box-shadow:
+      -75px -125px 0 40px #6cce74,
+       75px -125px 0 40px #c18d46,
+      150px    0px 0 40px #c14745,
+       75px  125px 0 40px #2e1e5b,
+      -75px  125px 0 40px #9c37a6,
+     -150px    0px 0 40px #76bdd1;
+  }
+}
+.Maindiv{
+
+width: 100%;
+height: 100%;
+position: absolute;
+left: 0px;
+top: 0px;
+background: -moz-linear-gradient(45deg, rgba(138,255,218,1) , rgba(0,128,128,1) 100%); /* ff3.6+ */
+background: -webkit-gradient(linear, left bottom, right top, color-stop( rgba(138,255,218,1)), color-stop(100%, rgba(0,128,128,1))); /* safari4+,chrome */
+background: -webkit-linear-gradient(45deg, rgba(138,255,218,1) 0%, rgba(0,128,128,1) 100%); /* safari5.1+,chrome10+ */
+background: -o-linear-gradient(45deg, rgba(138,255,218,1) 0%, rgba(0,128,128,1) 100%); /* opera 11.10+ */
+background: -ms-linear-gradient(45deg, rgba(138,255,218,1) 0%, rgba(0,128,128,1) 100%); /* ie10+ */
+background: linear-gradient(45deg, rgba(138,255,218,1) 0%, rgba(0,128,128,1) 100%); /* w3c */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008080', endColorstr='#8AFFDA',GradientType=1 ); /* ie6-9 */
+}
+</style>
+</head>
+<body>
+<div class="Maindiv">
+<marquee BEHAVIOR=ALTERNATE>
+<h2 style="color:#fff;">
+Welcome To KPOST Digital World
+</h2>
+</marquee>
+<h1>KPOST Web Services is UP and Running</h1>
+</div>
+<div class="Main">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "nodews",
+  "version": "1.0.0",
+  "description": "Nodejs RestAPI,Mongodb,etc...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KapildevThagapillai/NodeWS.git"
+  },
+  "keywords": [
+    "NodeWS-sample"
+  ],
+  "author": "Web-developer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KapildevThagapillai/NodeWS/issues"
+  },
+  "homepage": "https://github.com/KapildevThagapillai/NodeWS#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.7",
+    "multer": "^1.4.2",
+    "mysql": "^2.17.1",
+    "office-document-properties": "^1.0.9",
+    "pdfreader": "^1.0.4",
+    "razorpay": "^2.0.5",
+    "socket.io": "^2.2.0"
+  }
+}

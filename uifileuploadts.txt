@@ -1,0 +1,24 @@
+    async fileChange(event: any) {
+        let fileList: FileList = event.target.files;
+        let file: File = fileList[0];
+        const _formData = new FormData();
+        console.log(file)
+        _formData.append('myFile', file, file.name);
+        const headers = new Headers();
+        const options = new RequestOptions({ headers: headers });
+        console.log(_formData)
+        this.http.post('http://192.168.2.1:4001/NodeWSAcess/sample/fileupload',
+            _formData, options).subscribe((res: any) => {
+                console.log()
+            });
+    }
+
+
+
+
+      <button id="attach-icon-2" title="Add Image" id="onloadimageselect" mat-icon-button
+                    (click)="imgFileInput.click()">
+                    <mat-icon>attach_file</mat-icon>
+                    <input type="file" #imgFileInput hidden="" id="myFile" name="myFile"
+                        (change)="fileChange($event)" multiple />
+                </button>
