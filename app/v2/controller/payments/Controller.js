@@ -37,20 +37,31 @@ exports.useraymentHistory = function (req, res) {
   const data = req.body;
   var obj;
   var sql = "select * from payment_information;select sum(AMOUNT) as 'add' from payment_information where TYPE='add';select sum(AMOUNT) as 'buy' from payment_information where TYPE='buy'";
-  dbcon.query(sql, [2, 1], function (err, result) {
-     // console.log("History Get Success");
+  dbcon.query(sql, function (err, result) {
+      console.log("History Get Success");
+      //
+     // console.log(results[0].RowDataPacket);
+
+     //console.log(JSON.parse(JSON.stringify(result)));
+
+     var resultval = JSON.parse(JSON.stringify(result));
+     console.log(resultval[0]);
+
     if (err)
     {
       console.log("Something Error");
       console.log(err);
       return false;
     } 
-    var datalength = result.length[0];
+    var datalength = result.length;
+    console.log("===============");
+    console.log(datalength);
+    console.log("===============");
+
+    
     if(datalength > 0)
     {
-      console.log(results[0]);
-      console.log(results[1]);
-
+     
       obj={
           "status":"success",
           "value":result
