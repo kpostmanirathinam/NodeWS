@@ -171,7 +171,7 @@ console.log(data);
       if (err)
       {
         console.log("Something Error");
-        console.log(err);
+        console.log("hhhhh===="+err);
         return false;
       } 
       var datalength = result.length;
@@ -188,6 +188,7 @@ console.log(data);
             "value":result
             }
       }
+      db.close();
       res.send(obj);
     });
 }

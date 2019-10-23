@@ -27,7 +27,7 @@ exports.connect = function () {
                 console.log('Database is connected!');
                
             } else {
-                console.log('Error connecting database!'+err.message);
+                console.log('====== Error connecting database!========'+err.message);
             }
            
         });
@@ -38,7 +38,7 @@ exports.close = function () {
 
     db.end(function (err) {
         if (err) {
-             console.log('error:' + err.message);
+             console.log('error END=====:' + err.message);
         }
         console.log('Close the database connection.');
     });
