@@ -3,9 +3,9 @@ var mysql = require('mysql');
 //var settings = require('./settings.json');
 
 var settings = {
-    host: '192.168.2.212',
+    host: 'nodedb.crzch0rr7iws.us-east-1.rds.amazonaws.com',
     user: 'root',
-    password: 'Iot@369!4',
+    password: 'mani$123',
     database: 'socket',
     multipleStatements: true
 }
