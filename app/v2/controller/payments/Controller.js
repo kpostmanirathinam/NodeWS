@@ -35,8 +35,9 @@ rzp.payments.fetch('pay_DBeE14kFKAPoVM').then((data) => {
 exports.useraymentHistory = function (req, res) {
   var dbcon=db.connect();
   const data = req.body;
+  console.log(data)
   var obj;
-  var sql = "select * from payment_information;select sum(AMOUNT) as 'add' from payment_information where TYPE='add';select sum(AMOUNT) as 'buy' from payment_information where TYPE='buy'";
+  var sql = "select * from payment_information WHERE usermailid='"+data.mailId+"';select sum(AMOUNT) as 'add' from payment_information where TYPE='add' and usermailid='"+data.mailId+"';select sum(AMOUNT) as 'buy' from payment_information where TYPE='buy'  and usermailid='"+data.mailId+"'";
   dbcon.query(sql, function (err, result) {
       console.log("History Get Success");
       //
