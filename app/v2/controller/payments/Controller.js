@@ -32,7 +32,7 @@ rzp.payments.fetch('pay_DBeE14kFKAPoVM').then((data) => {
   }
 
 }
-exports.useraymentHistory = function (req, res) {
+exports.userpaymentHistory = function (req, res) {
   var dbcon=db.connect();
   const data = req.body;
   console.log(data)
@@ -40,11 +40,7 @@ exports.useraymentHistory = function (req, res) {
   var sql = "select * from payment_information WHERE usermailid='"+data.mailId+"';select sum(AMOUNT) as 'add' from payment_information where TYPE='add' and usermailid='"+data.mailId+"';select sum(AMOUNT) as 'buy' from payment_information where TYPE='buy'  and usermailid='"+data.mailId+"'";
   dbcon.query(sql, function (err, result) {
       console.log("History Get Success");
-      //
-     // console.log(results[0].RowDataPacket);
-
-     //console.log(JSON.parse(JSON.stringify(result)));
-
+     
      var resultval = JSON.parse(JSON.stringify(result));
      console.log(resultval[0]);
 
@@ -79,18 +75,17 @@ exports.useraymentHistory = function (req, res) {
   });
 }
 
-exports.samplepost = function (req, res) {
+exports.addpaymentHistory = function (req, res) {
     var dbcon=db.connect();
     const data = req.body;
     var obj;
     var errormsg;
-    var sql = "INSERT INTO signup (username, mailid, mobile, password) VALUES ('"+data.userName+"','"+data.mailId+"','"+data.mobile+"','"+data.password+"')";
+    var sql = "INSERT INTO payment_information (usermailid, type, information, status, transactiondetails, amount) VALUES ('"+data.userName+"','"+data.mailId+"','"+data.mobile+"','"+data.password+"')";
     dbcon.query(sql).on('result', function (result) {
         if(result.affectedRows==1)
         {
             obj={
-                "status":"success",
-                "errorMessage":"Profile Created Successfully"
+                "status":"success"
             }
         }
     }).on('error', function (err) {

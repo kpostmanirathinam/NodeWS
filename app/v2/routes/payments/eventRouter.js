@@ -7,6 +7,7 @@ var controller = require('../../controller/payments/Controller');
 router.get('/', controller.sampleget);
 router.post('/', controller.samplepost);
 router.post('/getpaymentdetails', controller.paymentdetails);
-router.post('/userPaymentHistory', controller.useraymentHistory);
+router.post('/userPaymentHistory', controller.userpaymentHistory);
+router.post('/addPaymentHistory', controller.addpaymentHistory);
 
 module.exports = router;
