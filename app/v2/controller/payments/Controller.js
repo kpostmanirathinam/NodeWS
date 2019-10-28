@@ -80,7 +80,9 @@ exports.addpaymentHistory = function (req, res) {
     const data = req.body;
     var obj;
     var errormsg;
-    var sql = "INSERT INTO payment_information (usermailid, type, information, status, transactiondetails, amount) VALUES ('"+data.userName+"','"+data.mailId+"','"+data.mobile+"','"+data.password+"')";
+    var sql = "INSERT INTO payment_information (usermailid, type, information, status, transactiondetails, amount)"+ 
+    "VALUES ('"+data.mailId+"','"+data.type+"','null','success','null','"+data.amount+"')";
+     console.log(sql);
     dbcon.query(sql).on('result', function (result) {
         if(result.affectedRows==1)
         {
