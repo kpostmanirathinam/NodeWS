@@ -22,7 +22,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.6.7",
+    "mongoose": "^5.7.5",
     "multer": "^1.4.2",
     "mysql": "^2.17.1",
     "office-document-properties": "^1.0.9",
