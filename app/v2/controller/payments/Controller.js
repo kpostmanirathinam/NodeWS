@@ -9,15 +9,25 @@ let rzp = new Razorpay({
 
 
 exports.sampleget = function (req, res) {
-    res.send('Payments Get method calling...')
+  console.log("NNNNNNN")
+ //   res.send('Payments Get method calling...')
+    // Fetch a particular payment
+rzp.payments.fetch('pay_DVrWbJCX6cLD7z').then((data) => {
+  res.send(data);  
+  //insertdbmethodcall(data);
+  }).catch((error) => {
+    // failure
+  })
+ 
 }
 
 
-exports.paymentdetails = function (req, res) {
+exports.paymentdetailspayid = function (req, res) {
 
 // Fetch a particular payment
 rzp.payments.fetch('pay_DBeE14kFKAPoVM').then((data) => {
-    insertdbmethodcall(data);
+  res.send(data);  
+  //insertdbmethodcall(data);
   }).catch((error) => {
     // failure
   })

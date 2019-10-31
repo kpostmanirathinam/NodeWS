@@ -6,7 +6,8 @@ var controller = require('../../controller/payments/Controller');
 // GET catalog home page.
 router.get('/', controller.sampleget);
 
-router.post('/getpaymentdetails', controller.paymentdetails);
+// router.get('/getpaymentdetails', controller.paymentdetails);
+router.post('/getpaymentdetailsid', controller.paymentdetailspayid);
 router.post('/userPaymentHistory', controller.userpaymentHistory);
 router.post('/addPaymentHistory', controller.addpaymentHistory);
 
