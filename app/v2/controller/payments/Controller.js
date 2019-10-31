@@ -2,10 +2,9 @@ var db = require('../../config/db/mysqldb');
 'use strict'
 
 const Razorpay = require('razorpay')
-// rzp_live_0rDeKmOygwRrpb:Au5foDRKJ7ePxrrjqKvjiFs7"
 let rzp = new Razorpay({
-  key_id: "rzp_live_0rDeKmOygwRrpb", // your `KEY_ID`
-  key_secret:'Au5foDRKJ7ePxrrjqKvjiFs7' // your `KEY_SECRET`
+  key_id: "rzp_live_G5ffVNm65R2JDe", // your `KEY_ID`
+  key_secret:'ztkI5URXgLMpubn1hLJnrPDN' // your `KEY_SECRET`
 })
 
 
