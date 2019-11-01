@@ -12,7 +12,7 @@ exports.sampleget = function (req, res) {
   console.log("NNNNNNN")
  //   res.send('Payments Get method calling...')
     // Fetch a particular payment
-rzp.payments.fetch('pay_DVrWbJCX6cLD7z').then((data) => {
+rzp.payments.fetch('pay_DakLT4gw8izAmv').then((data) => {
   res.send(data);  
   //insertdbmethodcall(data);
   }).catch((error) => {
@@ -23,22 +23,30 @@ rzp.payments.fetch('pay_DVrWbJCX6cLD7z').then((data) => {
 
 
 exports.paymentdetailspayid = function (req, res) {
-
+console.log("TEST")
+rzp.payments.fetch(req.body.pay_id).then((data) => {
+  const temp={
+      status:"success",
+      value:data
+  }
+  res.json(temp)
+}).catch((error) => {
+  const temp={
+      status:"failure",
+      value:null,
+      error:error.error
+  }
+  res.json(temp)
+  // failure
+})
 // Fetch a particular payment
-rzp.payments.fetch('pay_DBeE14kFKAPoVM').then((data) => {
-  res.send(data);  
-  //insertdbmethodcall(data);
-  }).catch((error) => {
-    // failure
-  })
+// rzp.payments.fetch('pay_DakLT4gw8izAmv').then((data) => {
+//   res.send(data);  
+//   }).catch((error) => {
+//     // failure
+//   })
  
 
-  function insertdbmethodcall(obj)
-  {
-    console.log("========== ENd part +++ ============");
-    console.log(obj);
-    res.send(obj);
-  }
 
 }
 exports.userpaymentHistory = function (req, res) {
@@ -90,7 +98,7 @@ exports.addpaymentHistory = function (req, res) {
     var obj;
     var errormsg;
     var sql = "INSERT INTO payment_information (usermailid, type, information, status, transactiondetails, amount)"+ 
-    "VALUES ('"+data.mailId+"','"+data.type+"','null','success','null','"+data.amount+"')";
+    "VALUES ('"+data.mailId+"','"+data.type+"','"+data.information+"','success','"+data.paymentdetails+"','"+data.amount+"')";
      console.log(sql);
     dbcon.query(sql).on('result', function (result) {
         if(result.affectedRows==1)
