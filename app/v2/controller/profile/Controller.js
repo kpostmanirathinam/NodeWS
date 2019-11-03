@@ -46,14 +46,14 @@ exports.updateprofile = function (req, res) {
     const data = req.body;
     var obj;
     var errormsg;
-    var sql = "UPDATE profile SET firstname='"+data.firstName+"',lastname='"+data.lastName+"',dateofbirth='"+data.dateOfBirth+"',aboutyourself='"+data.aboutMe+"' WHERE email='"+data.mailId+"'"; 
+    var sql = "UPDATE profile SET DATEOFBIRTH='"+data.dob+"',GENDER='"+data.gender+"',TWITTER='"+data.twitter+"',SKYPE='"+data.skype+"',LOCATION='"+data.location+"',WEBSITE='"+data.website+"' WHERE email='"+data.mailId+"'"; 
 console.log(sql);
     dbcon.query(sql).on('result', function (result) {
         if(result.affectedRows==1)
         {
             obj={
                 "status":"success",
-                "errorMessage":"Profile Updated Successfully"
+                "Message":"Profile Updated Successfully"
             }
         }
     }).on('error', function (err) {
