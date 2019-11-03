@@ -73,9 +73,11 @@ exports.getprofile = function (req, res) {
     const data = req.body;
     var obj;
     
-    var sql = "select * from profile where email='"+data.mailId+"'";
+//    var sql = "select * from profile where email='"+data.mailId+"'";
+var sql = "select * from profile";
     console.log(sql);
     dbcon.query(sql, function (err, result, fields) {
+        console.log(result)
       if (err)
       {
         console.log("Something Error");
