@@ -7,6 +7,7 @@ var login_Routes = require('../routes/login/loginRouter');
 var profile_Routes = require('../routes/profile/profileRouter');
 var events_Routes = require('../routes/event/eventRouter');
 var payments_Routes = require('../routes/payments/eventRouter');
+var recharge_Routes = require('../routes/recharge/rechargeRouter');
 
 
 router.get('/', function (req, res) {
@@ -18,6 +19,7 @@ router.use('/login', login_Routes);
 router.use('/profile', profile_Routes);
 router.use('/events', events_Routes);
 router.use('/payments', payments_Routes);
+router.use('/recharge', recharge_Routes);
 
 // router.use('/updateprofile', profile_Routes);
 
