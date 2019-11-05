@@ -16,20 +16,19 @@ exports.samplepost = function (req, res) {
  console.log(httval);
 
  const request = require('request')
-
-request.get('https://www.pay2all.in/web-api/paynow?api_token=4gQWeK1xZes3m3eQKjUjSZfjvNCeeD8ZniN8d8wN7vyrmqYk5ru7M0wGPCKB&number=7200447673&provider_id=112&amount=10&client_id=sskk',
- (error, res, body) => {
+let resu ;
+request.get('https://www.pay2all.in/web-api/paynow?api_token=4gQWeK1xZes3m3eQKjUjSZfjvNCeeD8ZniN8d8wN7vyrmqYk5ru7M0wGPCKB&number=7200447673&provider_id=112&amount=1&client_id=sskk',
+ (error, result, body) => {
   if (error) {
     console.error(error)
-    res.send(error);
-    //return
+    return
   }
-  console.log(`statusCode: ${res.statusCode}`)
+  console.log(`statusCode: ${result.statusCode}`)
   console.log(body)
-  
-  res.send(body);
-})
+//return body;  
+res.send(body);
 
+})
 
 }
 
