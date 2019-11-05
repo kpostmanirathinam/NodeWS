@@ -28,6 +28,8 @@
     "office-document-properties": "^1.0.9",
     "pdfreader": "^1.0.4",
     "razorpay": "^2.0.5",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
     "socket.io": "^2.2.0"
   }
 }
