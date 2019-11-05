@@ -13,28 +13,25 @@ exports.post = function (req, res) {
             var datalength = rows.length;
             console.log(datalength);
             const vals = rows[0];
-            if(datalength > 0)
-            {
-
             
             if(vals[0].ACTIVESTATUS=='yes')
             {
               var obj = {
-                "message": "success",
+                "status": "success",
                 "value":vals[0]
             }
             res.send(obj)
             }
             else{
               var obj = {
-                "message": "fail",
-                "errmsg":"Your Account not still Active",
+                "status": "fail",
+                "errmsg":"Your Account still not Active",
                 "value":"notactive"
             }
             res.send(obj)
             }
           }
-         }
+         
          else {
             res.send({
                 "message ": "failure",
