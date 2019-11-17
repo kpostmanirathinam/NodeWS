@@ -20,7 +20,7 @@ exports.samplepost = function (req, res) {
          }
          else {
             res.send({
-                "message ": "failure",
+                "message": "failure",
                 "value": err.sqlMessage,
             })
         }
