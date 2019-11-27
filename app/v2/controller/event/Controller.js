@@ -128,6 +128,13 @@ exports.alluserbookedEvents = function (req, res) {
       {
         console.log("Something Error");
         console.log(err);
+        obj={
+            "status":"fail",
+            "value":[],
+            "message":"Tech Error"
+            }
+
+        res.send(obj);
         return false;
       } 
       var datalength = result.length;
@@ -140,8 +147,9 @@ exports.alluserbookedEvents = function (req, res) {
       }
       else{
         obj={
-            "status":"fail",
-            "value":result
+            "status":"success",
+            "value":result,
+            "message":"No Data found"
             }
       }
       res.send(obj);
