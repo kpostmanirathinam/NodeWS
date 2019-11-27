@@ -6,9 +6,9 @@ const https = require('https')
 var rp = require('request-promise')
 
 exports.sampleget = function (req, res) {
-  console.log("NNNNNNN")
+  console.log("Get Method Calling")
 }
-exports.samplepost = function (req, res) {
+exports.mobile = function (req, res) {
   const data = req.body;
 
  var temp1 = "https://www.pay2all.in/web-api/paynow?api_token=4gQWeK1xZes3m3eQKjUjSZfjvNCeeD8ZniN8d8wN7vyrmqYk5ru7M0wGPCKB"
