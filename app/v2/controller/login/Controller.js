@@ -34,8 +34,8 @@ exports.post = function (req, res) {
          
          else {
             res.send({
-                "message ": "failure",
-                "value": err.sqlMessage,
+                "message": "failure",
+                "errmsg": err.sqlMessage,
             })
         }
     })
