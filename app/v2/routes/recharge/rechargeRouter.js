@@ -6,6 +6,8 @@ var controller = require('../../controller/recharge/Controller');
 // GET catalog home page.
 router.get('/', controller.sampleget);
 router.post('/mobile', controller.mobile);
+router.post('/dthrecharge', controller.dth);
+router.post('/ebbill', controller.ebbillpay);
 //router.post('/mobile', controller.samplepost);
 
 
